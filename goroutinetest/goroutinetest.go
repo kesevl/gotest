@@ -33,13 +33,3 @@ func liFang(num int, lifang chan int) {
 	}
 	lifang <- sum
 }
-
-func main() {
-	num := 589
-	pingfanggo := make(chan int)
-	lifanggo := make(chan int)
-	go liFang(num, pingfanggo)
-	go pingFang(num, lifanggo)
-	pingfanggos, lifanggos := <-pingfanggo, <-lifanggo
-	fmt.Println("all pingfang and lifang is", pingfanggos + lifanggos)
-}
