@@ -1,8 +1,5 @@
 package goroutinetest
 
-import (
-	"fmt"
-)
 
 func digits(num int, ciln chan int) {
 	for num != 0 {
